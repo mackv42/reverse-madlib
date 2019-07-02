@@ -31,20 +31,33 @@ var wordDict = {};
 var wordType = function(keyword, title){
 	this.title = title;
 	this.keyword = keyword;
-	this.edited = true;
 
+	this.edited = true;
+	/*
 	if(cellNum%3 == 0){
 		//add Row and set current row
 		currentRow = wordBoxes.insertRow(rowNum);
 		rowNum++;
-	}
+	}*/
 
 
-	currentCell = currentRow.insertCell(cellNum%3);
-	currentRow.class = 'wordBox';
+	//currentCell = currentRow.insertCell(cellNum%3);
+	this.element = document.createElement('div');
+	this.element.className = "col-sm-4";
+	//this.element.idName = this.title;
+	let textInput = document.createElement("textarea");
+	textInput.className = "form-control form-rounded";
+	textInput.placeholder = this.title;
+	textInput.id = this.title;
 
-	cellNum++;
-	currentCell.innerHTML = "<center><h2 style='margin-bottom: 0px;'>" + this.title + "</h2></center>" + "<textarea type='text' rows='10' id='" + this.title + "'>" + "</textarea>" + "<center><p style='margin: 0px'>keyword="+this.keyword+"</p></center>";
+	this.element.appendChild(textInput);
+	this.element.appendChild(document.createElement("label"));
+	wordBoxes.appendChild(this.element);
+
+	//cellNum++;
+	//currentCell.innerHTML = "<center><h2 style='margin-bottom: 0px;'>" + this.title + "</h2></center>" + "<textarea type='text' rows='10' id='" + this.title + "'>" + "</textarea>" + "<center><p style='margin: 0px'>keyword="+this.keyword+"</p></center>";
+	
+
 	wordTypeList.push(this);
 	wordDict[this.keyword] = this;
 }
@@ -77,7 +90,6 @@ var finalSentence = document.getElementById('finalSentence');
 document.getElementById('enterSentence').addEventListener('click', function(){
 	var sentence = document.getElementById('sentence').value;
 	var wordTemp = '';
-
 
 	for(let i=0; i<wordTypeList.length; i++){
 		sentence = sentence.replaceAllWithRand(wordTypeList[i].keyword, wordTypeList[i].getWords());

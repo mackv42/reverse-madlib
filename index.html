@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Reverse Mad Lib</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<link rel='stylesheet' href='style.css'/>
 </head>
 
 <body>
+
+	<!-- Turn into a bootstrap table -->
 	<center>
 		<table id='container'>
 			<tbody>
@@ -17,22 +19,25 @@
 						
 						<div class="col-sm-12">
 						  <!--<textarea class="md-textarea form-control" rows="3"></textarea>-->
+						  
+						  <!-- <label for="sentence">Story</label> -->
+						  <textarea class="form-control form-rounded" id="sentence" placeholder="Story" rows="3"></textarea>
 						  <input type='button' value='Enter' id='enterSentence'/>
-						  <label for="sentence">Sentence</label>
-						  <textarea class="form-control form-rounded" id="sentence" placeholder="Sentence" rows="3"></textarea>
 						</div>
 
 						<!-- Make this a form -->
 						<p><b>New Word Type</b><br/>
-							<b>Title: </b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type='text' id='title'/><br/> 
-							<b>Keyword: </b>&nbsp <input type='text' id='keyword'/> &nbsp&nbsp<input type='button' value='Enter' id='newWord'/>
+						
+							<input type="text" class="form-control form-rounded" placeholder="Type" id='title'>
+							<input type="text" class="form-control form-rounded" placeholder="KeyWord" id="keyword">
+							<input type='button' value='Enter' id='newWord'/>
 						</p>
 
 						<h3 id='finalSentence'></h3>
 
-						<table id='wordBoxes'>
+						<div id='wordBoxes' class="row">
 
-						</table>
+						</div>
 					</td>
 				</tr>
 			</tbody>

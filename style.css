@@ -1,0 +1,30 @@
+body{
+	background-color: lightblue;
+}	
+
+#header{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: orange;
+}
+
+#content{
+
+}
+
+#paddingR, #paddingL{
+	background-color: blue;
+}
+
+#paddingR, #content, #paddingL{
+	width: 32%;
+}
+
+.wordBox{
+	width: 32%;
+}
+
+#footer{
+	height: 50px;
+	background-color: orange;
+}
